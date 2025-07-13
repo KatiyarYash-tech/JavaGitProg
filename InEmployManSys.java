@@ -1,5 +1,4 @@
 package JavaGitProg;
-import java.util.Objects;
 import java.util.Scanner;
 
 class Employee {
@@ -95,6 +94,7 @@ public class InEmployManSys {
         System.out.println("Enter your Employee Id");
         int Id=sc.nextInt();
         sc.nextLine();
+        while (true){
         System.out.println("Enter your Work profile:- Manager, Developer, Intern ");
         String workProfile=sc.nextLine();
 
@@ -106,6 +106,7 @@ public class InEmployManSys {
             int totalsal=m.Calculate(m.Bonus);
             System.out.println("total Salary : "+totalsal);
             System.out.println(m);
+            break;
         }
         else if (workProfile.equals("Developer")) {
             System.out.println("Enter project name");
@@ -115,13 +116,16 @@ public class InEmployManSys {
             int totalsal= dev.Calculate(dev.Bonus);
             System.out.println("total Salary: "+totalsal);
             System.out.println(dev);
+            break;
         }
         else if (workProfile.equals("Intern")) {
             Intern i=new Intern(name,Id,"Internship",6,15000);
             System.out.println(i);
+            break;
         }
         else {
             System.out.println("WRONG SYNTAX \n Please Choose Again");
+        }
         }
 
     }
